@@ -29,7 +29,7 @@ state = {
   getUsers = async(e) => {
     e.preventDefault();
     const name = e.target.elements.name.value;
-    const api_call = await fetch(`http://api.github.com/users/${name}`);
+    const api_call = await fetch(`https://api.github.com/users/${name}`);
     const data = await api_call.json();
     console.log(data);
     if (name) {
@@ -90,14 +90,3 @@ state = {
 
 export default App;
 
-
-/**
-* npm install -g create-react-app
-create-react-app my-app
-cd my-app
-git init
-heroku create -b https://github.com/mars/create-react-app-buildpack.git
-git add .
-git commit -m "react-create-app on Heroku"
-git push heroku master
-heroku open*/
